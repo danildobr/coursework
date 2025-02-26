@@ -11,7 +11,7 @@ class VK_API:
         self.base_url = 'https://api.vk.com/method'
                 
     def _resolve_user_id(self, identifier):
-        """Определяет user_id по screen_name или ID"""
+        """Определяет identifier по screen_name или ID"""
         try:
             if not str(identifier).isdigit():
                 url = f'{self.base_url}/users.get'
@@ -49,7 +49,7 @@ class VK_API:
             raise Exception(f'Ошибка обработки данных от VK API: {e}')
 
     def process_photos(self, photos, count=5):
-        '''фильтруем размеры и оставляем только максимальные размеры'''
+        '''фильтруем размеры и оставляем только максимальное разрешение'''
         try:
             processed = []
             for photo in photos:
