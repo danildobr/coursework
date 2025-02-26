@@ -108,7 +108,7 @@ def load_config():
     '''Загружает конфигурацию из файла'''
     try:
         config = configparser.ConfigParser()
-        config.read('задачи нетологии Phyton\курсовая.py\config.ini')  # указать только config.ini
+        config.read('config.ini')  
         return config
     except Exception as e:
         raise Exception(f"Ошибка загрузки конфигурации: {e}")
